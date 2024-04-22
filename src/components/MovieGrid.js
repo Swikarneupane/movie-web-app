@@ -5,7 +5,7 @@ const MovieGrid = ({ movies, handleMovieClick }) => {
   if (!movies.length) return null
 
   return (
-    <div className="border-2 border-black">
+    <div className="border-2 border-black grid-cols-3">
       {movies.map((movie) => (
         <MovieCard key={movie.id} movie={movie} onClick={handleMovieClick} />
       ))}
