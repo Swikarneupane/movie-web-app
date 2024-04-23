@@ -1,5 +1,5 @@
 import Image from "next/image"
-import { Inter, Modak } from "next/font/google"
+import { Inter } from "next/font/google"
 import { BASE_URL } from "@/components/constant"
 import { useState } from "react"
 import { SearchParamsContext } from "next/dist/shared/lib/hooks-client-context.shared-runtime"
@@ -43,21 +43,24 @@ export default function Home() {
 
   return (
     <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}>
-      Hello! Welcome to movie db
+      className={`flex min-h-screen flex-col gap-2 items-center justify-center p-10 ${inter.className}`}>
+      <p className="text-xl font-medium">
+        {!movies.length ? "Welcome to MoviFlix" : "MoviFlix"}
+      </p>
       <form onSubmit={handleSearch}>
         <input
           name="moviename"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className=" border-2 border-black p-1"
+          className=" border-2 border-black p-1 mr-1 hover:border-2 hover:border-black focus:border-2 focus:outline-none"
           placeholder="Search for a movie..."
         />
-        <button type="submit" className=" bg-fuchsia-800 p-2 text-white">
+        <button
+          type="submit"
+          className=" bg-black px-3 p-1 border-2 border-black text-white md:hover:text-black md:hover:bg-white duration-300">
           Search
         </button>
       </form>
-      {/* Movie details here! */}
       <MovieGrid movies={movies} handleMovieClick={handleMovieClick} />
       <Modal movie={selectedMovie} onClose={handleCloseModal} />
     </main>
