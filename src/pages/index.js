@@ -45,9 +45,7 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col gap-2 items-center justify-center p-10 ${inter.className}`}>
       <p className="text-xl font-medium">
-        {/* {!movies.length ? "Welcome to MoviFlix" : "MoviFlix"}
-         */}
-        Welcome to MoviFlix
+        {!movies.length ? "Welcome to MoviFlix" : "MoviFlix"}
       </p>
       <form onSubmit={handleSearch}>
         <input
