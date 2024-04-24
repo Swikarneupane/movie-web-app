@@ -37,6 +37,7 @@ const Sidebar = () => {
   const ref = useOutsideClick(handleClickOutside)
   return (
     <div
+      ref={ref}
       className={`fixed py-2 px-5 gap-3 ${inter.className} ${
         isOpen ? "h-full bg-gray-100" : "h-max "
       }`}>

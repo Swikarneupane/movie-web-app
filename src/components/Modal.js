@@ -1,6 +1,6 @@
 import React from "react"
 
-const Modal = ({ movie, onClose }) => {
+const Modal = ({ movie, onClose, ref }) => {
   if (!movie) return null
 
   return (

@@ -35,12 +35,10 @@ export default function Home() {
 
   function handleMovieClick(movie) {
     setSelectedMovie(movie)
-    // blockScroll()
   }
 
   function handleCloseModal() {
     setSelectedMovie(null)
-    // allowScroll()
   }
 
   return (
