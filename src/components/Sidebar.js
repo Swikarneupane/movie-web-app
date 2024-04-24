@@ -2,6 +2,7 @@ import Link from "next/link"
 import React, { useState } from "react"
 import { Inter } from "next/font/google"
 const inter = Inter({ subsets: ["latin"] })
+import { useOutsideClick } from "@/customHooks/useOutsideClick"
 
 const navItems = [
   {
@@ -30,6 +31,10 @@ const Sidebar = () => {
   function closeSidebar() {
     setIsOpen(true)
   }
+  const handleClickOutside = () => {
+    setIsOpen(false)
+  }
+  const ref = useOutsideClick(handleClickOutside)
   return (
     <div
       className={`fixed py-2 px-5 gap-3 ${inter.className} ${

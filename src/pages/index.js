@@ -15,7 +15,9 @@ export default function Home() {
   const getMovies = async (query) => {
     try {
       const response = await fetch(
-        `${BASE_URL}/search/movie?api_key=${process.env.NEXT_PUBLIC_API_KEY}&query=${encodeURIComponent(query)}`
+        `${BASE_URL}/search/movie?api_key=${
+          process.env.NEXT_PUBLIC_API_KEY
+        }&query=${encodeURIComponent(query)}`
       )
       return await response.json()
     } catch (err) {
@@ -33,10 +35,12 @@ export default function Home() {
 
   function handleMovieClick(movie) {
     setSelectedMovie(movie)
+    // blockScroll()
   }
 
   function handleCloseModal() {
     setSelectedMovie(null)
+    // allowScroll()
   }
 
   return (

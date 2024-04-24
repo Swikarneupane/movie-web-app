@@ -9,14 +9,13 @@ const MovieCard = ({ movie, onClick }) => {
     <div
       onClick={() => onClick(movie)}
       className="w-[100%] cursor-pointer flex flex-col items-center justify-center my-10">
-      <div className="relative">
+      <div className="relative h-full sm:w-[80%] w-[full]">
         <Image
           src={imageUrl}
           alt={movie.title}
           height={128}
           width={192}
-          objectFit="cover"
-          className="rounded-sm w-[90%]"
+          className="rounded-sm w-full h-full object-cover"
         />
       </div>
       <h3 className="font-medium">{truncatedTitle}</h3>
