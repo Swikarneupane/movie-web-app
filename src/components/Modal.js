@@ -1,4 +1,5 @@
 import React from "react"
+import ModalLink from "./ModalLink"
 
 const Modal = ({ movie, onClose, ref }) => {
   if (!movie) return null
@@ -18,11 +19,14 @@ const Modal = ({ movie, onClose, ref }) => {
             {movie.release_date}
           </p>
         </div>
-        <button
-          onClick={onClose}
-          className="px-2 py-1 bg-blue-500 cursor-pointer text-white">
-          Close
-        </button>
+        <div className="flex flex-row justify-between">
+          <button
+            onClick={onClose}
+            className="px-2 py-1 bg-blue-500 cursor-pointer text-white w-max">
+            Close
+          </button>
+          <ModalLink id={movie.id} />
+        </div>
       </div>
     </div>
   )
