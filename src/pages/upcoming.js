@@ -31,7 +31,7 @@ const Upcoming = () => {
     <div
       className={`flex items-center ${inter.className} justify-center w-full pt-8`}>
       <main className="flex items-center justify-center flex-col w-[90%]">
-        <h1 className="font-semibold text-3xl text-center">Upcoming Movies</h1>
+        <h1 className="font-semibold text-3xl text-center">All Upcoming Movies</h1>
         <MovieGrid movies={movies} handleMovieClick={handleMovieClick} />
         {selectedMovie && (
           <Modal movie={selectedMovie} onClose={handleCloseModal} />
